@@ -1,0 +1,39 @@
+body {
+    font-family: Arial, sans-serif;
+    padding: 20px;
+}
+
+table {
+    border-collapse: collapse;
+    border-spacing: 0;
+}
+
+td {
+    border: 1px solid #333;
+    width: 100px;
+    height: 100px;
+    padding: 5px;
+    vertical-align: top;
+    text-align: left;
+}
+
+td.empty {
+    border: none;
+}
+
+h4 {
+    margin: 0 0 5px 0;
+    font-size: 14px;
+    text-align: center;
+}
+
+ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    font-size: 11px;
+}
+
+li {
+    margin: 3px 0;
+}

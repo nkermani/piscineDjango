@@ -1,1 +1,5 @@
-name = "duoquadragintian"
+name = "CV"
+firstname = "Nathan"
+lastname = "KERMANI"
+age = "29"
+profession = "42 Student"
