@@ -1,3 +1,6 @@
+#!/usr/bin/env python3
+
+
 def my_var():
     a = 42
     b = "42"
@@ -20,5 +23,13 @@ def my_var():
     print(f"{i} est de type {type(i)}")
 
 
-if __name__ == "__main__":
+def main():
     my_var()
+
+
+if __name__ == "__main__":
+    try:
+        main()
+    except Exception:
+        print("Error")
+        exit()

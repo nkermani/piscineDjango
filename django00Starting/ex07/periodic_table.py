@@ -1,3 +1,6 @@
+#!/usr/bin/env python3
+
+
 def parse_element(line):
     name, data = line.strip().split(" = ")
     attributes = {}
@@ -8,22 +11,26 @@ def parse_element(line):
 
 
 def read_periodic_table(filename):
-    elements = []
-    with open(filename, "r") as f:
-        for line in f:
-            if line.strip():
-                name, attributes = parse_element(line)
-                elements.append(
-                    {
-                        "name": name,
-                        "position": int(attributes["position"]),
-                        "number": int(attributes["number"]),
-                        "symbol": attributes["small"],
-                        "molar": attributes["molar"],
-                        "electron": attributes["electron"],
-                    }
-                )
-    return elements
+    try:
+        elements = []
+        with open(filename, "r") as f:
+            for line in f:
+                if line.strip():
+                    name, attributes = parse_element(line)
+                    elements.append(
+                        {
+                            "name": name,
+                            "position": int(attributes["position"]),
+                            "number": int(attributes["number"]),
+                            "symbol": attributes["small"],
+                            "molar": attributes["molar"],
+                            "electron": attributes["electron"],
+                        }
+                    )
+        return elements
+    except Exception:
+        print("Can't open periodic_table.txt file.")
+        exit()
 
 
 def get_element_color(number):
@@ -132,14 +139,12 @@ def generate_html(elements):
 
             bg_color = get_element_color(element["number"])
             html += f'            <td style="background-color: {bg_color};">\n'
-            html += f'                <div class="element">\n'
-            html += f'                    <span class="atomic-number">{element["number"]}</span>\n'
-            html += f'                    <span class="atomic-mass">{element["molar"]}</span>\n'
-            html += (
-                f'                    <div class="symbol">{element["symbol"]}</div>\n'
-            )
-            html += f'                    <div class="name">{element["name"]}</div>\n'
-            html += f"                </div>\n"
+            html += f'                <h4>{element["name"]}</h4>\n'
+            html += f"                <ul>\n"
+            html += f'                    <li>Number: {element["number"]}</li>\n'
+            html += f'                    <li>Symbol: {element["symbol"]}</li>\n'
+            html += f'                    <li>Atomic mass: {element["molar"]}</li>\n'
+            html += f"                </ul>\n"
             html += f"            </td>\n"
             current_position += 1
 
@@ -170,55 +175,32 @@ table {
 
 td {
     border: 1px solid #333;
-    width: 60px;
-    height: 60px;
-    position: relative;
-    text-align: center;
+    width: 100px;
+    height: 100px;
+    padding: 5px;
+    vertical-align: top;
+    text-align: left;
 }
 
 td.empty {
     border: none;
 }
 
-.element {
-    width: 100%;
-    height: 100%;
-    padding: 3px;
-    box-sizing: border-box;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-}
-
-.atomic-number {
-    position: absolute;
-    top: 2px;
-    left: 3px;
-    font-size: 9px;
-    font-weight: normal;
-}
-
-.atomic-mass {
-    position: absolute;
-    top: 2px;
-    right: 3px;
-    font-size: 8px;
-    font-weight: normal;
-}
-
-.symbol {
-    font-size: 22px;
-    font-weight: bold;
-}
-
-.name {
-    font-size: 8px;
-    position: absolute;
-    bottom: 2px;
-    left: 0;
-    right: 0;
+h4 {
+    margin: 0 0 5px 0;
+    font-size: 14px;
     text-align: center;
+}
+
+ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    font-size: 11px;
+}
+
+li {
+    margin: 3px 0;
 }
 """
     return css
@@ -239,4 +221,8 @@ def main():
 
 
 if __name__ == "__main__":
-    main()
+    try:
+        main()
+    except Exception:
+        print("Error")
+        exit()

@@ -1,8 +1,6 @@
+#!/usr/bin/env python3
+
 import sys
-
-states = {"Oregon": "OR", "Alabama": "AL", "New Jersey": "NJ", "Colorado": "CO"}
-capital_cities = {"OR": "Salem", "AL": "Montgomery", "NJ": "Trenton", "CO": "Denver"}
-
 
 def normalize_str(element):
     return element.strip().title()
@@ -16,6 +14,9 @@ def parsing(str_input):
 
 
 def get_state(capital_city):
+    states = {"Oregon": "OR", "Alabama": "AL", "New Jersey": "NJ", "Colorado": "CO"}
+    capital_cities = {"OR": "Salem", "AL": "Montgomery", "NJ": "Trenton", "CO": "Denver"}
+
     capital_city = capital_city.strip()
     for abbr, city in capital_cities.items():
         if city == capital_city:
@@ -26,6 +27,9 @@ def get_state(capital_city):
 
 
 def get_capital_city(state):
+    states = {"Oregon": "OR", "Alabama": "AL", "New Jersey": "NJ", "Colorado": "CO"}
+    capital_cities = {"OR": "Salem", "AL": "Montgomery", "NJ": "Trenton", "CO": "Denver"}
+
     state = state.strip()
     state_abbr = states.get(state)
     if state_abbr:
@@ -50,9 +54,17 @@ def loop(items):
     return
 
 
-if __name__ == "__main__":
+def main():
     if len(sys.argv) != 2:
         exit()
     str_input = sys.argv[1]
     items = parsing(str_input)
     loop(items)
+
+
+if __name__ == "__main__":
+    try:
+        main()
+    except Exception:
+        print("Error")
+        exit()
