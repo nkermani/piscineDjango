@@ -1,0 +1,18 @@
+Collecting git+https://github.com/jaraco/path.git
+  Cloning https://github.com/jaraco/path.git to /tmp/pip-req-build-x4qw_lxi
+  Running command git clone --filter=blob:none --quiet https://github.com/jaraco/path.git /tmp/pip-req-build-x4qw_lxi
+  Resolved https://github.com/jaraco/path.git to commit 0f86209f11199ceaff788c73f96ea5b5ec2318ee
+  Installing build dependencies: started
+  Installing build dependencies: finished with status 'done'
+  Getting requirements to build wheel: started
+  Getting requirements to build wheel: finished with status 'done'
+  Preparing metadata (pyproject.toml): started
+  Preparing metadata (pyproject.toml): finished with status 'done'
+Building wheels for collected packages: path
+  Building wheel for path (pyproject.toml): started
+  Building wheel for path (pyproject.toml): finished with status 'done'
+  Created wheel for path: filename=path-17.1.1-py3-none-any.whl size=23936 sha256=26553738c36773f8df65dc6daefbc73af7f0cdac16c2180f6c08b50f08a742f2
+  Stored in directory: /tmp/pip-ephem-wheel-cache-dks4npx1/wheels/05/97/77/84a6ccf4f5f41dfcbbeb29075fa06cf285990f754500f88e62
+Successfully built path
+Installing collected packages: path
+Successfully installed path-17.1.1
