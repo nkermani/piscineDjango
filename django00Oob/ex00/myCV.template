@@ -6,7 +6,7 @@
     <title>CV - {firstname} {lastname}</title>
 </head>
 <body>
-    <h1>Curriculum Vitae</h1>
+    <h1>{name}</h1>
     <h2>{firstname} {lastname}</h2>
     <p><strong>Age:</strong> {age}</p>
     <p><strong>Profession:</strong> {profession}</p>

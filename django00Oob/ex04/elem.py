@@ -118,7 +118,7 @@ class Elem:
         )
 
 
-if __name__ == "__main__":
+def main():
     html = Elem(
         "html",
         content=[
@@ -137,3 +137,10 @@ if __name__ == "__main__":
         ],
     )
     print(html)
+
+
+if __name__ == "__main__":
+    try:
+        main()
+    except Exception as e:
+        print("Error:", e)
