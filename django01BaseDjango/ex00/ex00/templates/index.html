@@ -1,0 +1,454 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ex00 : Markdown Cheatsheet.</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 20px;
+            line-height: 1.6;
+            background-color: #f5f5f5;
+        }
+
+        h1 {
+            color: #333;
+            border-bottom: 2px solid #333;
+            padding-bottom: 10px;
+        }
+
+        h2 {
+            color: #444;
+            margin-top: 30px;
+            border-bottom: 1px solid #ddd;
+            padding-bottom: 5px;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 15px 0;
+            background-color: white;
+        }
+
+        th,
+        td {
+            border: 1px solid #ddd;
+            padding: 12px;
+            text-align: left;
+        }
+
+        th {
+            background-color: #4a4a4a;
+            color: white;
+        }
+
+        tr:nth-child(even) {
+            background-color: #f9f9f9;
+        }
+
+        code {
+            background-color: #e8e8e8;
+            padding: 2px 6px;
+            border-radius: 3px;
+            font-family: 'Courier New', monospace;
+        }
+
+        pre {
+            background-color: #2d2d2d;
+            color: #f8f8f2;
+            padding: 15px;
+            border-radius: 5px;
+            overflow-x: auto;
+        }
+
+        pre code {
+            background-color: transparent;
+            color: inherit;
+        }
+
+        .section {
+            background-color: white;
+            padding: 20px;
+            margin: 20px 0;
+            border-radius: 5px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Ex00 : Markdown Cheatsheet.</h1>
+
+    <div class="section">
+        <h2>Headers</h2>
+        <table>
+            <tr>
+                <th>Markdown Syntax</th>
+                <th>Result</th>
+            </tr>
+            <tr>
+                <td><code># Header 1</code></td>
+                <td>Header level 1</td>
+            </tr>
+            <tr>
+                <td><code>## Header 2</code></td>
+                <td>Header level 2</td>
+            </tr>
+            <tr>
+                <td><code>### Header 3</code></td>
+                <td>Header level 3</td>
+            </tr>
+            <tr>
+                <td><code>#### Header 4</code></td>
+                <td>Header level 4</td>
+            </tr>
+            <tr>
+                <td><code>##### Header 5</code></td>
+                <td>Header level 5</td>
+            </tr>
+            <tr>
+                <td><code>###### Header 6</code></td>
+                <td>Header level 6</td>
+            </tr>
+        </table>
+    </div>
+
+    <div class="section">
+        <h2>Emphasis</h2>
+        <table>
+            <tr>
+                <th>Markdown Syntax</th>
+                <th>Result</th>
+            </tr>
+            <tr>
+                <td><code>*italic* or _italic_</code></td>
+                <td><em>italic</em></td>
+            </tr>
+            <tr>
+                <td><code>**bold** or __bold__</code></td>
+                <td><strong>bold</strong></td>
+            </tr>
+            <tr>
+                <td><code>***bold and italic***</code></td>
+                <td><strong><em>bold and italic</em></strong></td>
+            </tr>
+            <tr>
+                <td><code>~~strikethrough~~</code></td>
+                <td><del>strikethrough</del></td>
+            </tr>
+        </table>
+    </div>
+
+    <div class="section">
+        <h2>Lists</h2>
+        <h3>Unordered Lists</h3>
+        <table>
+            <tr>
+                <th>Markdown Syntax</th>
+                <th>Description</th>
+            </tr>
+            <tr>
+                <td><code>- Item 1</code></td>
+                <td>Dash syntax</td>
+            </tr>
+            <tr>
+                <td><code>* Item 1</code></td>
+                <td>Asterisk syntax</td>
+            </tr>
+            <tr>
+                <td><code>+ Item 1</code></td>
+                <td>Plus syntax</td>
+            </tr>
+        </table>
+
+        <h3>Ordered Lists</h3>
+        <table>
+            <tr>
+                <th>Markdown Syntax</th>
+                <th>Description</th>
+            </tr>
+            <tr>
+                <td><code>1. First item</code></td>
+                <td>Numbered list</td>
+            </tr>
+            <tr>
+                <td><code>2. Second item</code></td>
+                <td>Continues numbering</td>
+            </tr>
+        </table>
+
+        <h3>Nested Lists</h3>
+        <pre><code>- Item 1
+  - Nested item 1
+  - Nested item 2
+- Item 2</code></pre>
+    </div>
+
+    <div class="section">
+        <h2>Links</h2>
+        <table>
+            <tr>
+                <th>Markdown Syntax</th>
+                <th>Description</th>
+            </tr>
+            <tr>
+                <td><code>[Link text](URL)</code></td>
+                <td>Inline link</td>
+            </tr>
+            <tr>
+                <td><code>[Link text](URL "Title")</code></td>
+                <td>Link with title</td>
+            </tr>
+            <tr>
+                <td><code>[Link text][reference]</code></td>
+                <td>Reference link</td>
+            </tr>
+            <tr>
+                <td><code>&lt;URL&gt;</code></td>
+                <td>Automatic link</td>
+            </tr>
+        </table>
+    </div>
+
+    <div class="section">
+        <h2>Images</h2>
+        <table>
+            <tr>
+                <th>Markdown Syntax</th>
+                <th>Description</th>
+            </tr>
+            <tr>
+                <td><code>![Alt text](image_url)</code></td>
+                <td>Inline image</td>
+            </tr>
+            <tr>
+                <td><code>![Alt text](image_url "Title")</code></td>
+                <td>Image with title</td>
+            </tr>
+            <tr>
+                <td><code>![Alt text][reference]</code></td>
+                <td>Reference image</td>
+            </tr>
+        </table>
+    </div>
+
+    <div class="section">
+        <h2>Code</h2>
+        <table>
+            <tr>
+                <th>Markdown Syntax</th>
+                <th>Description</th>
+            </tr>
+            <tr>
+                <td><code>`inline code`</code></td>
+                <td>Inline code with backticks</td>
+            </tr>
+            <tr>
+                <td><code>```language</code><br>code block<br><code>```</code></td>
+                <td>Fenced code block</td>
+            </tr>
+            <tr>
+                <td>4 spaces indentation</td>
+                <td>Code block with indentation</td>
+            </tr>
+        </table>
+    </div>
+
+    <div class="section">
+        <h2>Blockquotes</h2>
+        <table>
+            <tr>
+                <th>Markdown Syntax</th>
+                <th>Description</th>
+            </tr>
+            <tr>
+                <td><code>&gt; Quote text</code></td>
+                <td>Simple blockquote</td>
+            </tr>
+            <tr>
+                <td><code>&gt; Line 1</code><br><code>&gt; Line 2</code></td>
+                <td>Multi-line blockquote</td>
+            </tr>
+            <tr>
+                <td><code>&gt; Level 1</code><br><code>&gt;&gt; Level 2</code></td>
+                <td>Nested blockquote</td>
+            </tr>
+        </table>
+    </div>
+
+    <div class="section">
+        <h2>Horizontal Rules</h2>
+        <table>
+            <tr>
+                <th>Markdown Syntax</th>
+                <th>Description</th>
+            </tr>
+            <tr>
+                <td><code>---</code></td>
+                <td>Three dashes</td>
+            </tr>
+            <tr>
+                <td><code>***</code></td>
+                <td>Three asterisks</td>
+            </tr>
+            <tr>
+                <td><code>___</code></td>
+                <td>Three underscores</td>
+            </tr>
+        </table>
+    </div>
+
+    <div class="section">
+        <h2>Tables</h2>
+        <pre><code>| Header 1 | Header 2 | Header 3 |
+|----------|----------|----------|
+| Cell 1   | Cell 2   | Cell 3   |
+| Cell 4   | Cell 5   | Cell 6   |</code></pre>
+
+        <h3>Table Alignment</h3>
+        <pre><code>| Left     | Center   | Right    |
+|:---------|:--------:|---------:|
+| Left     | Center   | Right    |</code></pre>
+    </div>
+
+    <div class="section">
+        <h2>Task Lists</h2>
+        <table>
+            <tr>
+                <th>Markdown Syntax</th>
+                <th>Description</th>
+            </tr>
+            <tr>
+                <td><code>- [ ] Task</code></td>
+                <td>Unchecked task</td>
+            </tr>
+            <tr>
+                <td><code>- [x] Task</code></td>
+                <td>Checked task</td>
+            </tr>
+        </table>
+    </div>
+
+    <div class="section">
+        <h2>Escaping Characters</h2>
+        <table>
+            <tr>
+                <th>Character</th>
+                <th>Escape Syntax</th>
+            </tr>
+            <tr>
+                <td>Backslash</td>
+                <td><code>\\</code></td>
+            </tr>
+            <tr>
+                <td>Backtick</td>
+                <td><code>\`</code></td>
+            </tr>
+            <tr>
+                <td>Asterisk</td>
+                <td><code>\*</code></td>
+            </tr>
+            <tr>
+                <td>Underscore</td>
+                <td><code>\_</code></td>
+            </tr>
+            <tr>
+                <td>Hash</td>
+                <td><code>\#</code></td>
+            </tr>
+            <tr>
+                <td>Plus</td>
+                <td><code>\+</code></td>
+            </tr>
+            <tr>
+                <td>Minus</td>
+                <td><code>\-</code></td>
+            </tr>
+            <tr>
+                <td>Dot</td>
+                <td><code>\.</code></td>
+            </tr>
+            <tr>
+                <td>Exclamation</td>
+                <td><code>\!</code></td>
+            </tr>
+            <tr>
+                <td>Brackets</td>
+                <td><code>\[ \]</code></td>
+            </tr>
+            <tr>
+                <td>Parentheses</td>
+                <td><code>\( \)</code></td>
+            </tr>
+            <tr>
+                <td>Curly braces</td>
+                <td><code>\{ \}</code></td>
+            </tr>
+            <tr>
+                <td>Pipe</td>
+                <td><code>\|</code></td>
+            </tr>
+        </table>
+    </div>
+
+    <div class="section">
+        <h2>Line Breaks</h2>
+        <table>
+            <tr>
+                <th>Markdown Syntax</th>
+                <th>Description</th>
+            </tr>
+            <tr>
+                <td>Two spaces at end of line</td>
+                <td>Soft line break</td>
+            </tr>
+            <tr>
+                <td>Empty line</td>
+                <td>New paragraph</td>
+            </tr>
+            <tr>
+                <td><code>&lt;br&gt;</code></td>
+                <td>HTML line break</td>
+            </tr>
+        </table>
+    </div>
+
+    <div class="section">
+        <h2>Footnotes</h2>
+        <table>
+            <tr>
+                <th>Markdown Syntax</th>
+                <th>Description</th>
+            </tr>
+            <tr>
+                <td><code>Text[^1]</code></td>
+                <td>Footnote reference</td>
+            </tr>
+            <tr>
+                <td><code>[^1]: Footnote text</code></td>
+                <td>Footnote definition</td>
+            </tr>
+        </table>
+    </div>
+
+    <div class="section">
+        <h2>Definition Lists</h2>
+        <pre><code>Term
+: Definition 1
+: Definition 2</code></pre>
+    </div>
+
+    <div class="section">
+        <h2>Abbreviations</h2>
+        <pre><code>*[HTML]: Hyper Text Markup Language
+The HTML specification is maintained by the W3C.</code></pre>
+    </div>
+
+</body>
+
+</html>
