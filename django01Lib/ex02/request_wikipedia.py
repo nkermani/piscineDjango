@@ -61,7 +61,7 @@ def clean_wiki_content(content):
 
 def search_wikipedia(query):
     """Search Wikipedia and return the page content if found."""
-    url = "https://fr.wikipedia.org/w/api.php"
+    url = "https://en.wikipedia.org/w/api.php"
 
     # First, search for the term (handles misspellings via Wikipedia's search)
     search_params = {
