@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Ex03 - Color Shades</title>
+    <style>
+        table {
+            border-collapse: collapse;
+        }
+
+        th,
+        td {
+            width: 80px;
+            height: 40px;
+            border: 1px solid #ccc;
+            text-align: center;
+        }
+    </style>
+</head>
+
+<body>
+    <table>
+        <thead>
+            <tr>
+                <th>Noir</th>
+                <th>Rouge</th>
+                <th>Bleu</th>
+                <th>Vert</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for shade in shades %}
+            <tr>
+                <td style="background-color: {{ shade.noir }};"></td>
+                <td style="background-color: {{ shade.rouge }};"></td>
+                <td style="background-color: {{ shade.bleu }};"></td>
+                <td style="background-color: {{ shade.vert }};"></td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</body>
+
+</html>

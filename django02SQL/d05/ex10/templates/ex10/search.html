@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Search</title>
+    <style>
+        body { font-family: sans-serif; }
+        .result { margin-bottom: 5px; }
+    </style>
+</head>
+<body>
+    <h1>Search</h1>
+    <form method="post">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit">Search</button>
+    </form>
+
+    {% if results %}
+        <h2>Results</h2>
+        {% if results == "Nothing corresponding to your research" %}
+            <p>{{ results }}</p>
+        {% else %}
+            <ul>
+            {% for result in results %}
+                <li class="result">
+                    {{ result.movie_title }} - {{ result.person_name }} - {{ result.gender }} - {{ result.homeworld_name }} - {{ result.homeworld_diameter }}
+                </li>
+            {% endfor %}
+            </ul>
+        {% endif %}
+    {% endif %}
+</body>
+</html>

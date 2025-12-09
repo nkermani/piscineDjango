@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Update Movie</title>
+</head>
+
+<body>
+    <h1>Update a Movie</h1>
+    <form method="post">
+        {% csrf_token %}
+        <label for="movie">Select a movie to update:</label>
+        <select name="movie" id="movie">
+            {% for movie in movies %}
+            <option value="{{ movie.0 }}">{{ movie.0 }}</option>
+            {% endfor %}
+        </select>
+        <br><br>
+        <label for="opening_crawl">Opening Crawl:</label><br>
+        <textarea name="opening_crawl" id="opening_crawl" rows="4" cols="50"></textarea>
+        <br><br>
+        <input type="submit" value="Update">
+    </form>
+</body>
+
+</html>

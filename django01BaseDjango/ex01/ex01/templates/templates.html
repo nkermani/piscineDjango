@@ -1,0 +1,37 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block title %}Ex01 : Moteur de template.{% endblock %}
+
+{% block style %}
+<link rel="stylesheet" href="{% static 'style2.css' %}">
+{% endblock %}
+
+{% block content %}
+<h1>Ex01 : Moteur de template.</h1>
+
+<h2>Le moteur de templates de Django</h2>
+<p>Le moteur de templates Django permet de generer du HTML dynamique en combinant du HTML statique avec des donnees Python.</p>
+
+<h2>1. Les blocs (Blocks)</h2>
+<p>Un bloc est une zone du template qui peut etre remplacee par les templates enfants pour respecter le principe DRY.</p>
+<pre><code>{&#37; block nom &#37;}contenu{&#37; endblock &#37;}</code></pre>
+
+<h2>2. Les boucles (for ... in)</h2>
+<p>Les boucles permettent de parcourir une liste et de repeter du code HTML pour chaque element.</p>
+<pre><code>{&#37; for item in items &#37;}
+  &lt;p&gt;{&#123; item &#125;}&lt;/p&gt;
+{&#37; endfor &#37;}</code></pre>
+
+<h2>3. Les structures de controle (if)</h2>
+<p>Les conditions permettent d'afficher du contenu de maniere conditionnelle.</p>
+<pre><code>{&#37; if condition &#37;}
+  &lt;p&gt;Vrai&lt;/p&gt;
+{&#37; else &#37;}
+  &lt;p&gt;Faux&lt;/p&gt;
+{&#37; endif &#37;}</code></pre>
+
+<h2>4. Affichage de variables (contexte)</h2>
+<p>Les variables passees par contexte sont accessibles via <code>{&#123; variable &#125;}</code>.</p>
+<p>Exemple : la vue passe <code>{"name": "Alice"}</code> au template, accessible via <code>{&#123; name &#125;}</code>.</p>
+{% endblock %}
