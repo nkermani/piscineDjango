@@ -1,0 +1,15 @@
+{% extends 'ex00/base.html' %}
+{% load i18n %}
+
+{% block title %}{% trans "My Favourites" %}{% endblock %}
+
+{% block content %}
+<h1>{% trans "My Favourites" %}</h1>
+<ul>
+    {% for fav in favourites %}
+    <li><a href="{% url 'article_detail' fav.article.pk %}">{{ fav.article.title }}</a></li>
+    {% empty %}
+    <li>{% trans "No favourites yet." %}</li>
+    {% endfor %}
+</ul>
+{% endblock %}

@@ -1,0 +1,105 @@
+[
+    {
+        "model": "auth.user",
+        "pk": 1,
+        "fields": {
+            "username": "hex_master",
+            "password": "pbkdf2_sha256$260000$1234567890$1234567890"
+        }
+    },
+    {
+        "model": "auth.user",
+        "pk": 2,
+        "fields": {
+            "username": "binary_hater",
+            "password": "pbkdf2_sha256$260000$1234567890$1234567890"
+        }
+    },
+    {
+        "model": "auth.user",
+        "pk": 3,
+        "fields": {
+            "username": "decimal_fan",
+            "password": "pbkdf2_sha256$260000$1234567890$1234567890"
+        }
+    },
+    {
+        "model": "ex00.article",
+        "pk": 1,
+        "fields": {
+            "title": "0x00: The Beginning",
+            "author": 1,
+            "created": "2023-01-01T00:00:00Z",
+            "synopsis": "An introduction to the hexadecimal number system.",
+            "content": "Hexadecimal is a positional system that represents numbers using a radix (base) of 16."
+        }
+    },
+    {
+        "model": "ex00.article",
+        "pk": 2,
+        "fields": {
+            "title": "0xDEADBEEF",
+            "author": 1,
+            "created": "2023-01-02T10:00:00Z",
+            "synopsis": "Understanding magic debug values.",
+            "content": "0xDEADBEEF is a frequently used magic debug value in Hexspeak."
+        }
+    },
+    {
+        "model": "ex00.article",
+        "pk": 3,
+        "fields": {
+            "title": "0xFF: The End of a Byte",
+            "author": 2,
+            "created": "2023-01-03T15:30:00Z",
+            "synopsis": "Why 255 is such an important number.",
+            "content": "In computing, the number 255 (0xFF) is the maximum value of an 8-bit unsigned integer."
+        }
+    },
+    {
+        "model": "ex00.article",
+        "pk": 4,
+        "fields": {
+            "title": "0xC0FFEE",
+            "author": 2,
+            "created": "2023-01-04T08:00:00Z",
+            "synopsis": "A color and a drink.",
+            "content": "0xC0FFEE is a hex code for a shade of blue, but it reads like Coffee."
+        }
+    },
+    {
+        "model": "ex00.article",
+        "pk": 5,
+        "fields": {
+            "title": "0x10 vs 16",
+            "author": 3,
+            "created": "2023-01-05T12:00:00Z",
+            "synopsis": "Comparing base 16 and base 10.",
+            "content": "16 in decimal is 10 in hexadecimal. Confusing? Maybe."
+        }
+    },
+    {
+        "model": "ex00.userfavouritearticle",
+        "pk": 1,
+        "fields": {
+            "user": 1,
+            "article": 3
+        }
+    },
+    {
+        "model": "ex00.userfavouritearticle",
+        "pk": 2,
+        "fields": {
+            "user": 1,
+            "article": 4
+        }
+    },
+    {
+        "model": "ex00.userfavouritearticle",
+        "pk": 3,
+        "fields": {
+            "user": 2,
+            "article": 1
+        }
+    }
+]

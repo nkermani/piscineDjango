@@ -1,17 +1,61 @@
-<!DOCTYPE html>
-<html lang="en">
+{% extends 'tips/base.html' %}
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Life Pro Tips</title>
-</head>
+{% block content %}
+<h1>Welcome to Life Pro Tips</h1>
 
-<body>
-    <nav>
-        Hello {{ username }}!
-    </nav>
-    <h1>Welcome to Life Pro Tips</h1>
-</body>
+{% if user.is_authenticated %}
+<div class="card mb-4">
+    <div class="card-body">
+        <h3>Share a Tip</h3>
+        <form method="post">
+            {% csrf_token %}
+            {{ form.as_p }}
+            <button type="submit">Post Tip</button>
+        </form>
+    </div>
+</div>
+{% endif %}
 
-</html>
+<div class="tips-list">
+    {% for tip in tips %}
+    <div class="tip-card" style="border: 1px solid #ddd; padding: 15px; margin-bottom: 15px; border-radius: 5px;">
+        <p class="tip-content">{{ tip.content }}</p>
+        <div style="display: flex; justify-content: space-between; align-items: center;">
+            <small class="text-muted">
+                Posted by <strong>{{ tip.author.username }} ({{ tip.author.reputation }})</strong> on {{ tip.date }}
+            </small>
+
+            {% if user.is_authenticated %}
+            <div class="actions">
+                <a href="{% url 'vote_tip' tip.id 'up' %}"
+                    class="btn btn-sm {% if user in tip.upvotes.all %}btn-success{% else %}btn-outline-success{% endif %}">
+                    Upvote ({{ tip.upvotes.count }})
+                </a>
+
+                {% if user == tip.author or user.reputation >= 15 %}
+                <a href="{% url 'vote_tip' tip.id 'down' %}"
+                    class="btn btn-sm {% if user in tip.downvotes.all %}btn-danger{% else %}btn-outline-danger{% endif %}">
+                    Downvote ({{ tip.downvotes.count }})
+                </a>
+                {% endif %}
+
+                {% if user == tip.author or user.reputation >= 30 %}
+                <a href="{% url 'delete_tip' tip.id %}" class="btn btn-sm btn-outline-secondary"
+                    onclick="return confirm('Are you sure?')">
+                    Delete
+                </a>
+                {% endif %}
+            </div>
+            {% else %}
+            <div class="actions">
+                <span class="badge bg-success">Upvotes: {{ tip.upvotes.count }}</span>
+                <span class="badge bg-danger">Downvotes: {{ tip.downvotes.count }}</span>
+            </div>
+            {% endif %}
+        </div>
+    </div>
+    {% empty %}
+    <p>No tips yet. Be the first to share one!</p>
+    {% endfor %}
+</div>
+{% endblock %}

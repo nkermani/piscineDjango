@@ -1,0 +1,97 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2025-12-11 15:00+0000\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: French <fr@li.org>\n"
+"Language: fr\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n > 1);\n"
+
+msgid "Django Blog"
+msgstr "Blog Django"
+
+msgid "Articles"
+msgstr "Articles"
+
+msgid "Favourites"
+msgstr "Favoris"
+
+msgid "Publications"
+msgstr "Publications"
+
+msgid "Register"
+msgstr "S'inscrire"
+
+msgid "Logged as"
+msgstr "Connecté en tant que"
+
+msgid "Logout"
+msgstr "Se déconnecter"
+
+msgid "Username"
+msgstr "Nom d'utilisateur"
+
+msgid "Password"
+msgstr "Mot de passe"
+
+msgid "Login"
+msgstr "Se connecter"
+
+msgid "Title"
+msgstr "Titre"
+
+msgid "Author"
+msgstr "Auteur"
+
+msgid "Created"
+msgstr "Créé"
+
+msgid "Synopsis"
+msgstr "Synopsis"
+
+msgid "Detail"
+msgstr "Détail"
+
+msgid "Time Since"
+msgstr "Depuis"
+
+msgid "View"
+msgstr "Voir"
+
+msgid "%(time)s ago"
+msgstr "il y a %(time)s"
+
+msgid "Add to Favourites"
+msgstr "Ajouter aux favoris"
+
+msgid "English"
+msgstr "Anglais"
+
+msgid "French"
+msgstr "Français"
+
+msgid "My Publications"
+msgstr "Mes publications"
+
+msgid "Publish New Article"
+msgstr "Publier un nouvel article"
+
+msgid "My Favourites"
+msgstr "Mes favoris"
+
+msgid "No favourites yet."
+msgstr "Pas encore de favoris."
+
+msgid "Publish Article"
+msgstr "Publier un article"
+
+msgid "Publish"
+msgstr "Publier"
+
+msgid "Your username and password didn't match. Please try again."
+msgstr "Votre nom d'utilisateur et votre mot de passe ne correspondent pas. Veuillez réessayer."

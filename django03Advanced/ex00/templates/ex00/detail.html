@@ -1,0 +1,23 @@
+{% extends 'ex00/base.html' %}
+{% load i18n %}
+
+{% block title %}{{ article.title }}{% endblock %}
+
+{% block content %}
+<h1>{{ article.title }}</h1>
+<p><strong>{% trans "Author" %}:</strong> {{ article.author }}</p>
+<p><strong>{% trans "Created" %}:</strong> {{ article.created }}</p>
+<p><strong>{% trans "Synopsis" %}:</strong> {{ article.synopsis }}</p>
+<hr>
+<div>
+    {{ article.content|linebreaks }}
+</div>
+<hr>
+{% if user.is_authenticated %}
+<form method="post" action="{% url 'favourite_create' %}">
+    {% csrf_token %}
+    {{ favourite_form.as_p }}
+    <button type="submit">{% trans "Add to Favourites" %}</button>
+</form>
+{% endif %}
+{% endblock %}
